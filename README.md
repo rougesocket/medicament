@@ -26,7 +26,7 @@ https://medicament-test.azurewebsites.net
 
 - Azure Cosmos DB
     : Azure cosmos dB is used as database for my web app. The Application talks to the database on cloud (Azure cosmos DB) In order to provide functionality mentioned under the features section. Screenshot below gives shows information about Database employeed in project on my azure portal.
-    ![db azure screenshot](./screenshot/dbss.png)
+    ![db azure screenshot](./screenshot/dbss.PNG)
 - Azure APP Services: This Azure service is used for deployment of the project from my machine onto azure. The live link of the project can be found [here](https://medicament-test.azurewebsites.net/)
 - Visual Studio Code : Entire development as well as testing is done on Visual Studio Code.
 
