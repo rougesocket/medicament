@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    {{>head}}
+<link rel="stylesheet" href="../css/dash.css">
+    <title>Dashboard::Medlist</title>
+
+
+</head>
+<body>
+    {{>dashnav}}
+    <main class="mt-3 px-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 fw-bold fs-3">Medicine List</div>
+        </div>
+        
+        <div class="row mt-3">
+
+            <div class="card">
+              <div class="card-header d-flex justify-content-end">
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="fas fa-plus-square m-1"></i>New Medicine
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Add New Medicine</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      
+        <form action="/addmed" method="POST">
+            <div class="mb-3">
+                <label for="pname" class="form-label text-capitalize">enter product name</label>
+                <input type="text" name="pname" id="pname" class="form-control" placeholder="Enter Name of product" required>
+            </div>
+            <div class="mb-3">
+              <label for="ptype" class="form-label text-capitalize">Medicine Type</label>
+              <input type="text" name="ptype" id="ptype" class="form-control" placeholder="Enter Type of Medicine" required>
+          </div>
+            <div class="mb-3">
+              <label for="price" class="form-label text-capitalize">Price</label>
+              <input type="text" name="price" id="price" class="form-control" placeholder="Enter Price" required>
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label text-capitalize">Quantity</label>
+            <input type="text" name="quantity" id="quantity" class="form-control" placeholder="Quantity" required>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label text-capitalize">Expiry Date</label>
+          <input type="date" name="date" id="date" class="form-control" required>
+        </div>
+    </div>
+    <div class="modal-footer d-block">
+      <button type="submit" class="btn btn-success" name="register" data-bs-dismiss="modal">Submit</button>
+     </div>
+     </form>
+  </div>
+</div>
+</div>
+
+            </div>
+                <div class="card-body">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each data}}
+                          <tr>
+                            <th scope="row">
+                              {{@index}}
+                            </th>
+                            <td class="text-capitalize">{{pname}}</td>
+                            <td class="text-capitalize">{{ptype}}</td>
+                            <td class="text-capitalize">{{price}}</td>
+                            <td class="text-capitalize">{{quantity}}</td>
+                            <td><div>
+                              <form action="/delmed" method="POST">
+                              <input type="hidden" name="id" value="{{_id}}">
+                              <button type="submit" class="btn btn-danger">Delete</button>
+                              </form>
+                            </div></td>
+                          </tr>
+                          {{/each}}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+      
+    <!-- JavaScript Bundle with Popper -->
+
+        {{>somescript}}
+</body>
+</html>

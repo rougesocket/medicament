@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.card-color{
+    background-color:#6ca6c1;
+}
+.box{
+    background-color: #292C6D;
+    height: 80vh;
+}
+
+
+.navbar{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.ml-0{
+    margin-right: 1rem!important;
+}
+
+.display-3 {
+      
+    font-size: calc(1rem + 2.5vw);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+
+  
+footer{
+    background-color: #292C6D;
+    padding: 1rem 2rem 3rem;
+}
+.socket{
+    background-color: #292C6D;
+}

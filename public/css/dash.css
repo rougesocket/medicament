@@ -1,0 +1,44 @@
+.socket{
+    background-color: #292C6D;
+}
+
+
+:root{
+    --offcanvas-width: 270px;
+    --topNavBarHeight:67px;
+}
+
+.sidebar-nav{
+    width: var(--offcanvas-width);
+}
+
+@media  (min-width:992px) {
+    body{
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop{
+        display: none!important;
+    }
+    .sidebar-nav{
+        transform: none;
+        visibility: visible!important;
+        top:var(--topNavBarHeight);
+        height: calc(100% - var(--topNavBarHeight));
+    }
+    main{
+        margin-left: var(--offcanvas-width);
+    }
+
+    
+}
+
+@media (max-width:990px) {
+    
+    .dropdown-menu-end{
+        --bs-position:start;
+    }
+    .dropdown-menu-end[data-bs-popper] {
+        right: auto;
+        left: 0;
+      }
+}
